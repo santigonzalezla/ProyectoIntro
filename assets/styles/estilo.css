@@ -1,0 +1,783 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root
+{
+    --blue: #46A2FD;
+    --blue2:rgba(0, 128, 255);
+    --white1: #fff;
+    --white2: #f2f2f2;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+.menuprincipal
+{
+    background: url("../images/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+main
+{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.index
+{
+    background-color: var(--white1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+}
+
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue2);
+    border-left: 10px solid var(--blue2);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active
+{
+    width: 75px;
+}
+
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white1);
+}
+
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white1);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon
+{
+    font-size: 1.75em;    
+}
+
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 5px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white1);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white1);
+    pointer-events: none;
+}
+
+.mainIndex
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white1);
+    transition: 0.5s;
+}
+
+.mainIndex.active
+{
+    width: calc(100% - 75px);
+    left: 75px;
+}
+
+.topbar
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search
+{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label
+{
+    position: relative;
+    width: 100%;
+}
+
+.search label input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon
+{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,0.5fr);
+    grid-gap: 10px;
+}
+
+.cardBox .card
+{
+    position: relative;
+    background: var(--white1);    
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--blue);
+}
+
+.cardBox .card .cardName
+{
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBox
+{
+    font-size: 3.5em;
+    color: var(--black2);
+}
+
+.cardBox .card:hover
+{
+    background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox
+{
+    color: var(--white1);
+}
+
+.details
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white1);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.details .cardHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.details .cardHeader h2
+{
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.btn
+{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white1);
+    border-radius: 6px;
+}
+
+.details table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td
+{
+    font-weight: 600;
+}
+
+.details .recentOrders table tr
+{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tr:last-child
+{
+    border-bottom: none;
+}
+
+.details .recentOrders table tr:hover
+{
+    background: var(--blue);
+    color: var(--white1);
+}
+
+.details .recentOrders table tr td
+{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child
+{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(2)
+{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(3)
+{
+    text-align: center;
+}
+
+.status.delivered
+{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending
+{
+    padding: 2px 4px;
+    background: #f9ca3f;
+    color: var(--white1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.return
+{
+    padding: 2px 4px;
+    background: #f00;
+    color: var(--white1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.inprogress
+{
+    padding: 2px 4px;
+    background: #1795ce;
+    color: var(--white1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentCustomers
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white1);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.recentCustomers .imgBox
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentCustomers .imgBox img 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.recentCustomers table tr:hover
+{
+    background: var(--blue);
+    color: var(--white1);
+}
+
+.recentCustomers table tr td
+{
+    padding: 12px 10px;
+}
+
+.recentCustomers table tr td h4
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.recentCustomers table tr td h4 span
+{
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.recentCustomers table tr:hover
+{
+    background: var(--blue);
+    color: var(--white1);
+}
+
+.recentCustomers table tr:hover td h4 span
+{
+    color: var(--white1);
+}
+
+.contenedor
+{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajatrasera
+{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+
+}
+
+.datos
+{
+    width: 100%;
+    padding: 120px;
+    color: #F2F2F2;
+}
+
+.cajatrasera div
+{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.cajatrasera div p,
+.cajatrasera button
+{
+    margin-top: 30px;
+}
+
+.cajatrasera div h3
+{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajatrasera div p
+{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.cajatrasera button
+{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.cajatrasera button:hover
+{
+    background: #fff;
+    color: var(--blue);
+}
+
+/*Formularios*/
+.contenedorLogin
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorLogin form
+{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorLogin form h2
+{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--blue);
+}
+
+.contenedorLogin form input
+{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: var(--white2);
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedorLogin form button
+{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: var(--blue);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.formLogin
+{
+    opacity: 1;
+    display: block;
+}
+
+.formRegistro
+{
+    display: none;
+}
+
+@media (max-width: 991px)
+{
+    .navigation
+    {
+        left: -300px;
+    }
+
+    .navigation.active
+    {
+        left: 0;
+        width: 300px;
+    }
+
+    .mainIndex
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .mainIndex.active
+    {
+        left: 300px;
+    }
+
+    .cardBox
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px)
+{
+    .details
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .recentOrders
+    {
+        overflow-x: auto;
+    }
+
+    .status.inprogress
+    {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .cardBox
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }    
+
+    .cardHeader
+    {
+        font-size: 20px;
+    }
+
+    .user
+    {
+        min-width: 40px;
+    }
+
+    .navigation
+    {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle
+    {
+        z-index: 10001;
+    }
+
+    .mainIndex.active .toggle
+    {
+        position: fixed;
+        right: 0;
+        color: var(--white1);
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    main
+    {
+        margin-top: 50px;
+    }
+
+    .cajatrasera
+    {
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajatrasera div
+    {
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+    .contenedorLogin
+    {
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorLogin form
+    {
+        position: relative;
+    }
+}
+
